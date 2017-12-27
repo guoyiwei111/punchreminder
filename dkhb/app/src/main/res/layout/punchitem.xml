@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dip"
+    android:weightSum="1">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/punchtime"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="2017-8-3 12:34"
+            android:textSize="12pt"
+            android:gravity="left"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            />
+    </LinearLayout>
+
+</LinearLayout>

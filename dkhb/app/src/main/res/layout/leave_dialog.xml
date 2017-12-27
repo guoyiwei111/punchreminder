@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/leavetitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="添加例外"
+                android:textSize="20dip"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="15dp">
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="请假"
+                    android:checked="true"
+                    android:id="@+id/leaveradiobutton"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp" />
+
+                <RadioButton
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="公干"
+                    android:id="@+id/ggradiobutton" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="从"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                style="@android:style/Widget.EditText"
+                android:layout_width="129dp"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/fromdatetext"
+                android:text="2018-09-23"
+                android:focusable="false"
+                android:textAlignment="center" />
+
+            <TextView
+                style="@android:style/Widget.EditText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:ems="10"
+                android:id="@+id/fromtimetext"
+                android:text="08:00"
+                android:focusable="false"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="至"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                style="@android:style/Widget.EditText"
+                android:layout_width="129dp"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/todatetext"
+                android:text="2018-09-23"
+                android:focusable="false"
+                android:textAlignment="center" />
+
+            <TextView
+                style="@android:style/Widget.EditText"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:ems="10"
+                android:id="@+id/totimetext"
+                android:text="08:00"
+                android:focusable="false"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="确定"
+                android:id="@+id/leaveokbutton" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="取消"
+                android:id="@+id/leavecancelbutton" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

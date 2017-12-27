@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"  tools:context=".MediaPlayerActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:background="#FFFFFF"
+        >
+
+        <!--layout_weight这个属性为权重，让两个textview平分这个linearLayout-->
+        <TextView
+            android:id="@+id/videoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="打卡"
+            android:textColor="#000000"
+            android:textSize="20dip"
+            />
+
+        <TextView
+            android:id="@+id/musicLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="例外"
+            android:textColor="#000000"
+            android:textSize="20dip"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_below="@id/linearLayout"
+        android:id="@+id/scrollbar"
+        android:scaleType="matrix"
+        android:src="@drawable/scrollbar" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scrollbar">
+    </android.support.v4.view.ViewPager>
+    <Button
+        android:id="@+id/addpunch"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="+"
+        android:textSize="20dp"
+        android:textColor="#ffffff" />
+</RelativeLayout>

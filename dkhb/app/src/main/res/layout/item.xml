@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="5dip"
+    android:weightSum="1">
+
+
+    <GridLayout
+        android:id="@+id/status"
+        android:layout_width="60dp"
+        android:layout_height="59dp"
+        android:background="#8898ee"
+        android:rowCount="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="13"
+            android:id="@+id/day"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_column="0"
+            android:layout_marginTop="7dp"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="周三"
+            android:id="@+id/week"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_marginBottom="20dp" />
+    </GridLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/first"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="12:34"
+            android:textSize="10pt"
+            android:gravity="left"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            />
+        <TextView
+            android:id="@+id/end"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="18:34"
+            android:textSize="10pt"
+            android:gravity="bottom"
+            android:layout_marginLeft="10dip"
+            android:layout_marginBottom="5dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9时4分"
+            android:textSize="10pt"
+            android:layout_marginTop="15dip" />
+
+        <TextView
+            android:id="@+id/punchstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="异常"
+            android:textSize="9pt"
+            android:layout_marginTop="15dip"
+            android:gravity="right"
+            android:textColor="#ff0000" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:orientation="vertical"
+        android:gravity="right">
+
+        <TextView
+            android:id="@+id/daytype"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="月末周六"
+            android:textSize="5pt"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="false"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            android:textColor="#e90700" />
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

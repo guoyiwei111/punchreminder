@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3f51b5</color>
+    <color name="colorPrimaryDark">#828dd2</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="press">#25fa55</color>
+    <color name="gary">#898989</color>
+    <color name="red"> #FF0000</color>
+    <color name="title_transparent_black">#abffffff</color>
+    <color name="light_black">#141414</color>
+    <color name="line_and_outline_grey">#d9d9d9</color>
+    <color name="white">#ffffff</color>
+</resources>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionName="1.1"
+    package="com.example.guoyiwei.dk">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 添加快捷方式 -->
+
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <!-- 移除快捷方式 -->
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <!-- 查询快捷方式 -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.MOUT_UNMOUNT_FILESYSTEMS"/>
+
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!--用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <!--这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+
+
+    <!-- 不是SDK需要的权限，是示例中的后台唤醒定位需要的权限 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
+
+    <!-- 需要运行时注册的权限 -->
+    <!--用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--用于提高GPS定位速度-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!--写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--读取缓存数据-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!--用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 更改设置 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- 3.2.0版本增加 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- 3.2.0版本增加-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"/>
+
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"></uses-permission>
+    <receiver
+        android:name="com.example.guoyiwei.dk.com.example.services.WatchmenReceiver"
+        android:label="WatchmenReceiver">
+        <intent-filter>
+            <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            <action android:name="android.net.wifi.STATE_CHANGE" />
+            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+
+            <!-- 新增action参考个推，可大大提高service存活率和消息到达速度 -->
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+            <action android:name="android.intent.action.USER_PRESENT" />
+            <action android:name="android.intent.action.MEDIA_MOUNTED" />
+            <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+            <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            <action android:name="com.example.guoyiwei.dk" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+
+
+        </intent-filter>
+    </receiver>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="5572e7fdd22f2bd4af41f5f1bccb15c5" />
+        <!-- 定位需要的服务 -->
+        <service android:name="com.amap.api.location.APSService" >
+        </service>
+
+        <activity android:name=".MainActivity" android:label="打卡助手" >
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+                <!-- 自定义的action，通过自定义的action可以应用内调用 -->
+                <!--<action android:name="android.intent.action.SHORTCUT" />-->
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- 必须加上这个，否则无法直接使用自定的action -->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            </intent-filter>
+        </activity>
+        <activity android:name=".MediaPlayerActivity" android:launchMode="singleTask"
+            android:label="编辑">
+
+        </activity>
+
+        <activity android:name=".SettingActivity" android:launchMode="singleTask"
+            android:label="设置">
+
+        </activity>
+
+        <activity android:name=".AboutActivity"
+            android:label="关于">
+        </activity>
+
+        <activity android:name=".LogActivity"
+            android:label="日志">
+
+        </activity>
+        <activity android:name=".AppSelectActivity"
+            android:label="选择应用">
+
+        </activity>
+
+        <activity android:name=".ComSelectActivity" android:launchMode="singleTask"
+            android:label="选择组件">
+
+        </activity>
+
+
+        <activity android:name=".DakaActivity" android:launchMode="singleTask"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".PolygonSelectActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            >
+        </activity>
+
+
+        <service android:name=".services.AssistService" />
+        <service android:name=".services.ForeService" />
+        <service android:name=".update.DownloadService" android:exported="true" />
+        <service android:name=".services.JobSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service android:name=".services.DkNotificationListenerService"
+            android:label="NotificationListenerService"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+
+        <receiver android:name=".services.LoongggAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.loonggg.alarm.clock"/>
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name=".ClockAlarmActivity" android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            ></activity>
+
+    </application>
+
+</manifest>
